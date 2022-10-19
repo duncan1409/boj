@@ -2,7 +2,11 @@
   "files.associations": {
     "ostream": "cpp",
     "iostream": "cpp",
+<<<<<<< HEAD
     "iomanip": "cpp",
     "*.tcc": "cpp"
+=======
+    "numeric": "cpp"
+>>>>>>> a2b198e956943f517868065319115238b3d8ef64
   }
 }
