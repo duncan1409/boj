@@ -2,11 +2,30 @@
   "files.associations": {
     "ostream": "cpp",
     "iostream": "cpp",
-<<<<<<< HEAD
-    "iomanip": "cpp",
-    "*.tcc": "cpp"
-=======
-    "numeric": "cpp"
->>>>>>> a2b198e956943f517868065319115238b3d8ef64
+    "*.tcc": "cpp",
+    "cctype": "cpp",
+    "clocale": "cpp",
+    "cmath": "cpp",
+    "compare": "cpp",
+    "concepts": "cpp",
+    "cstdint": "cpp",
+    "cstdio": "cpp",
+    "cstdlib": "cpp",
+    "cwchar": "cpp",
+    "cwctype": "cpp",
+    "exception": "cpp",
+    "initializer_list": "cpp",
+    "iosfwd": "cpp",
+    "istream": "cpp",
+    "limits": "cpp",
+    "new": "cpp",
+    "numbers": "cpp",
+    "stdexcept": "cpp",
+    "streambuf": "cpp",
+    "string": "cpp",
+    "string_view": "cpp",
+    "system_error": "cpp",
+    "type_traits": "cpp",
+    "typeinfo": "cpp"
   }
 }
