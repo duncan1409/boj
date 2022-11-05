@@ -1,97 +1,137 @@
 #include <iostream>
-<<<<<<< HEAD
-using namespace std;
-class Stack
-{
-public:
-  void Push (int i)
-  {
-    //push
-  }
-  void Pop ()
-  {
-
-  }
-  void Size (int * current_array)
-  {
-
-  }
-  void Empty (int * current_array)
-  {
-
-  }
-  void Top (int *current_array)
-  {
-
-  }
-} int main()
-{
-=======
 #include <cstring>
-
 using namespace std;
 
-template <class T>
+class DataNode
+{
+private:
+  int data;
+  DataNode *next;
+
+public:
+  DataNode(int value) : data(value), next(NULL){};
+  
+  void SetNext(DataNode *value) //대입함수... next에 대입하려면 자료형이 같아야한다.
+  {
+    next = value;
+  }
+  int GetData() //반환함수
+  {
+    return data;
+  }
+  DataNode *GetNext() //반환함수
+  {
+    return next;
+  }
+};
 class Stack
 {
 private:
-  T *stack;
-  int _top;
-  int _capacity;
+  int size;
+  DataNode *top;
+  DataNode *bottom;
 
 public:
-  Stack(int stack_capacity = 10);
-  ~Stack() { delete[] stack; }
-  bool IsEmpty() const;
-  T & Top() const;
-  void Push(const T & item);
-  void Pop();
-};
-template <class T>
-Stack<T>::Stack(int stack_capacity)//접근자 함수
-    : capacity(stack_capacity)
-{
-  if (capacity < 1)
-    throw "Stack capacity must be > 0" stack = new T[capacity];
-  top = -1;
-}
-// Stack
-template <class T>//접근자 함수
-inline bool Stack<T>::IsEmpty() const
-{
-  return top == -1
-}
-// Top
-template <class T>//접근자 함수
-inline T &Stack<T>::Top() const
-{
-  if (IsEmpty())
-    throw "Stack is empty";
-  return stack[top];
-}
-// Push
-template <class T>
-void Stack<T>::Push(const T &x)
-{ // Add x to the stack.
-  if (top == capacity - 1)
+  Stack() : size(0), top(NULL), bottom(NULL){}; // size=0, top=NULL, bottom=NULL;
+  void Push(int data)                           // Data 넣는다: 변화 수행... void
   {
-    ChangeSize1D(stack, capacity, 2 * capacity);
-    capacity *= 2;
+    DataNode *newNode = new DataNode(data);
+    if (top == NULL)
+    {
+      top = newNode;
+      bottom = newNode;
+    }
+    else
+    {
+      //(*top).SetNext() == top->SetNext()
+      newNode->SetNext(top); // SetNext 멤버함수를 쓰기위해서
+      top = newNode;
+    }
+    size++;
   }
-  // add at stack top
-  stack[++top] = x;
-}
-template <class T>
-void Stack<T>::Pop()
-{
-  if (IsEmpty())
-    throw "Stack is empty. Cannot delete.";
-  stack[top--].~T(); // destructor for T
-}
-
+  int Pop() // Data 뺀다: 변화 수행 + 출력 수행... int
+  {
+    if (!IsEmpty())
+    {
+      DataNode *temp = top;//DataNode일 필요가 있는진 ㅁㄹ;
+      int value = temp->GetData();
+      if (temp->GetNext())
+      {
+        top = temp->GetNext();
+      }
+      else//top의 next가 존재하지 않으면 NULL로 돌아간다.
+      {
+        top = NULL;
+        bottom = NULL;
+      }
+      size--;
+      delete temp;
+      return value;
+    }
+    return -1;
+  }
+  int GetSize()
+  {
+    return size;
+  }
+  bool IsEmpty()
+  {
+    if (bottom == NULL)
+      return true;
+    return false;
+  }
+  int GetTopValue()
+  {
+    if (top != NULL)
+      return top->GetData(); //다른 클래스 함수이용방법.
+    return -1;
+  }
+  int GetBottomValue()
+  {
+    if (bottom != NULL)
+      return bottom->GetData(); //다른 클래스 함수이용방법.
+    return -1;
+  }
+};
 int main()
 {
-  int n;
-  cin >> n;
->>>>>>> 27401f16955752253aa33737693c0e319d5341c1
+  freopen("input.txt", "r", stdin);
+  int tcase = 0;
+  cin >> tcase;
+
+  char str[128];
+  char *cmd = NULL;
+  cin.ignore();
+
+  Stack stack;
+
+  for (int i = 0; i < tcase; i++)
+  {
+    cin.getline(str, 128, '\n');
+    cmd = strtok(str, " ");
+
+    if (strcmp("push", cmd) == 0)
+    {
+      char *second = strtok(NULL, " ");
+      int num = atoi(second);
+      stack.Push(num);
+    }
+    else if (strcmp("pop", cmd) == 0)
+    {
+      cout << stack.Pop() << endl;
+    }
+    else if (strcmp("size", cmd) == 0)
+    {
+      cout << stack.GetSize() << endl;
+    }
+    else if (strcmp("empty", cmd) == 0)
+    {
+      cout << stack.IsEmpty() << endl;
+    }
+    else if (strcmp("top", cmd) == 0)
+    {
+      cout << stack.GetTopValue() << endl;
+    }
+  }
+  return 0;
 }

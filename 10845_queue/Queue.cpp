@@ -1,25 +1,27 @@
 #include <iostream>
+
 #include <cstring>
+
+using namespace std;
+
 class DataNode
 {
+
 private:
-  int number;
+  int data;
+
   DataNode *next;
 
 public:
-  // int 타입의 값을 받는 생성자를 생성하고 이니셜라이져로 value를 number로 초기화, next 값을 NULL로 초기화.
-  DataNode(int value) : number(value), next(NULL){};
-  void SetNumber(int value)
-  {
-    number = value;
-  }
+// int 타입의 값을 받는 생성자 생성. 그리고 이니셜라이져로 value로 Data를 초기화하고 next의 값을 NULL로 초기화함.
+  DataNode(int value) : data(value), next(NULL){};
   void SetNext(DataNode *value)
   {
     next = value;
   }
-  int GetNumber()
+  int GetData()
   {
-    return number;
+    return data;
   }
   DataNode *GetNext()
   {
@@ -31,44 +33,71 @@ class Queue
 private:
   int size;
   DataNode *front;
-  DataNode *back;
-
+  DataNode *rear;
 public:
-  Queue() : size(0), front(NULL), back(NULL) {}
-  void Push(int number)
+  Queue() : size(0), front(NULL), rear(NULL) {}
+  void push(int Data)
   {
-    DataNode *newNode = new DataNode(number);
+    DataNode *newNode = new DataNode(Data);
     if (front == NULL)
     {
       front = newNode;
-      back = newNode;
+      rear = newNode;
     }
     else
     {
-      back->SetNext(newNode);
-      back = newNode;
+      rear->SetNext(newNode);
+      rear = newNode;
     }
     size++;
   }
-  int Pop()
+  int pop()
   {
+    if (!isEmpty())
+    {
+      DataNode *temp = front;
+      int value = temp->GetData();
+      if (temp->GetNext())
+      { // front의 next가 존재하면
+        front = temp->GetNext(); // front의 next를 front로 지정.
+      }
+      else
+      { // front의 next가 존재하지 않으면 NULL로 돌아감
+        front = NULL;
+        rear = NULL;
+      }
+      size--;
+      delete temp;
+      return value;
+    }
+    return -1;
   }
-  int GetSize()
+  int getSize()
   {
+    return size;
   }
-  bool IsEmpty()
+  bool isEmpty()
   {
-
+    if (front == NULL)
+    {
+      return true;
+    }
+    return false;
   }
   int GetFrontValue()
   {
-
+    if (front != NULL)
+    {
+      return front->GetData();
+    }
+    return -1;
   }
-  int GetBackValue()
+  int GetRearValue()
   {
-
+    if (rear != NULL)
+    {
+      return rear->GetData();
+    }
+    return -1;
   }
 };
-int main(int argc, const char* argv[])
-{
-}
