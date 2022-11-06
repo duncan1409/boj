@@ -1,6 +1,6 @@
 //이분탐색
 #include <iostream>
-#include <cstring>
+#include <algorithm>
 using namespace std;
 void GuessCards (int N, int M, int *SangGeun, int *Guess)
 {
