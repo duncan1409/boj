@@ -32,7 +32,7 @@ private:
   DataNode *bottom;
 
 public:
-  Stack() : size(0), top(NULL), bottom(NULL){}; // size=0, top=NULL, bottom=NULL;
+  Stack() : size(0), top(NULL), bottom(NULL){} // size=0, top=NULL, bottom=NULL;
   void Push(int data)                           // Data 넣는다: 변화 수행... void
   {
     DataNode *newNode = new DataNode(data);

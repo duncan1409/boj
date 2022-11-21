@@ -1,69 +1,47 @@
 #include <iostream>
 #include <algorithm>
 using namespace std;
-int BinarySearch (int lengthData, int *data, int search)
+int BinarySearch(int *data, int size, int search)
 {
-  //ascending rule에 따라 sorting 되어 있는 것을 전제로 구성.
-  int medium = lengthData/2;
-  int newData[50000];
-
-  if (lengthData ==1 && data[0]==search)
-    return true;
-  else if (lengthData ==1 && data[0]!=search)
-    return false;
-  else if(lengthData==0)
-    return false;
-  //recursive functional part
-  else if (data[medium]==search)
-    return true;
-  else if (data[medium]>search)
-    
-    for (int i=0; i<medium; i++)
-      newData[i]=data[i];
-    
-    return BinarySearch(medium, newData, search);
-  else if (data[medium]<search)
-    
-    for (int i=0; i<lengthData-medium+1; i++)
-      newData[i]=data[medium + i];
-    
-    return BinarySearch(lengthData-medium+1, newData, search);
-  
-}
-void GuessCards (int N, int M, int *SangGeun, int *Guess)
-{
-  int result[M]={0, };
-  for (int i=0; i<N; i++)
+  int start = 0, end = size - 1;
+  int medium;
+  while (start <= end)
   {
-    for(int j=0; j<M; j++)
-    {
-      if(SangGeun[i]==Guess[j])
-        result[j]++;
-    }
+    medium = (start + end) / 2 ;
+    if (data[medium] == search) {
+      return 1;}
+    else if (data[medium] > search) end=medium-1;
+    else start=medium+1;
   }
-  for (int i=0; i<M; i++)
-    cout<<result[i]<<" ";
+  return 0;
 }
 int main()
 {
   freopen("input.txt", "r", stdin);
-  int N=0, M=0;
-  
-  cin>>N;
-  int SangGeun[N]={0, };
-  for(int i=0; i<N;i++)
+  int N = 0, M = 0;
+
+  cin >> N;
+  int SangGeun[N] = {
+      0,
+  };
+  for (int i = 0; i < N; i++)
   {
-    cin>>SangGeun[i];
+    cin >> SangGeun[i];
   }
-  
-  cin>>M;
-  int Guess[M]={0, };
+
+  cin >> M;
+  int Guess[M] = {
+      0,
+  };
+  for (int i = 0; i < M; i++)
+  {
+    cin >> Guess[i];
+  }
+  sort(SangGeun, SangGeun+N);//이진탐색을 위한 정렬함수 by STL
   for (int i=0; i<M; i++)
   {
-    cin>>Guess[i];
+    cout<<BinarySearch(SangGeun, N, Guess[i])<<" ";
   }
-  
-  GuessCards(N, M, SangGeun, Guess);
 
   return 0;
 }
