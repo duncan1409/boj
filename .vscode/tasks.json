@@ -10,7 +10,7 @@
                 "-g",
                 "${fileDirname}\\**.cpp",
                 "-o",
-                "${workspaceRoot}\\exe\\${fileBasenameNoExtension}.exe"
+                "${workspaceRoot}\\bin\\${fileBasenameNoExtension}.exe"
             ],
             "problemMatcher": [
                 "$gcc"
@@ -25,7 +25,7 @@
                 "-g",
                 "${fileDirname}\\**.cpp",
                 "-o",
-                "${workspaceRoot}\\exe\\${fileBasenameNoExtension}.exe"
+                "${workspaceRoot}\\bin\\${fileBasenameNoExtension}.exe"
             ],
             "problemMatcher": [
                 "$gcc"
@@ -38,7 +38,7 @@
             "group": "test",
             "args": [
                 "/C",
-                "${workspaceRoot}\\exe\\${fileBasenameNoExtension}.exe"
+                "${workspaceRoot}\\bin\\${fileBasenameNoExtension}.exe"
             ]
         },
         {
@@ -50,7 +50,7 @@
                 "-g",
                 "${file}",
                 "-o",
-                "${workspaceRoot}\\exe\\${fileBasenameNoExtension}.exe"
+                "${workspaceRoot}\\bin\\${fileBasenameNoExtension}.exe"
             ],
             "options": {
                 "cwd": "C:/msys64/mingw64/bin"

@@ -1,6 +1,5 @@
-4
-aaa bbb ccc ddd
-bbb ddd
-aaa ddd
-aaa
-aaa bbb
+5 1
+3
+1
+5
+3
