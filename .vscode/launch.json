@@ -3,30 +3,9 @@
   "configurations": [
     {
       "type": "java",
-      "name": "Launch AMinusB",
+      "name": "Launch app",
       "request": "launch",
-      "mainClass": "src.AMinusB",
-      "projectName": "Baekjoon_804bd832"
-    },
-    {
-      "type": "java",
-      "name": "Launch APlusB",
-      "request": "launch",
-      "mainClass": "src.APlusB",
-      "projectName": "Baekjoon_804bd832"
-    },
-    {
-      "type": "java",
-      "name": "Launch HelloWord",
-      "request": "launch",
-      "mainClass": "HelloWord",
-      "projectName": "Baekjoon_804bd832"
-    },
-    {
-      "type": "java",
-      "name": "Launch APlusB",
-      "request": "launch",
-      "mainClass": "APlusB",
+      "mainClass": "app",
       "projectName": "Baekjoon_804bd832"
     },
     {
