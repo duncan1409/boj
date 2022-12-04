@@ -10,7 +10,6 @@ void HowMuchRange(string num)
 	/*
 	0123456
 	abbdddf
-
 	*/
 	int max = 1, count = 1;
 	for (int i = 0; i < num.length(); i++)
