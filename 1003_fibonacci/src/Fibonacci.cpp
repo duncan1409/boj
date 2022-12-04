@@ -29,7 +29,7 @@ int Fibonacci_1(int n)
 }
 int main()
 {
-  freopen("input.txt", "r", stdin);
+  //freopen("input.txt", "r", stdin);
   ios::sync_with_stdio(false);
   cin.tie(NULL);
   cout.tie(NULL);

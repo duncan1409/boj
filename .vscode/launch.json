@@ -2,10 +2,38 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "type": "java",
+      "name": "Launch AMinusB",
+      "request": "launch",
+      "mainClass": "src.AMinusB",
+      "projectName": "Baekjoon_804bd832"
+    },
+    {
+      "type": "java",
+      "name": "Launch APlusB",
+      "request": "launch",
+      "mainClass": "src.APlusB",
+      "projectName": "Baekjoon_804bd832"
+    },
+    {
+      "type": "java",
+      "name": "Launch HelloWord",
+      "request": "launch",
+      "mainClass": "HelloWord",
+      "projectName": "Baekjoon_804bd832"
+    },
+    {
+      "type": "java",
+      "name": "Launch APlusB",
+      "request": "launch",
+      "mainClass": "APlusB",
+      "projectName": "Baekjoon_804bd832"
+    },
+    {
       "name": "gcc.exe - 활성 파일 빌드 및 디버그",
       "type": "cppdbg",
       "request": "launch",
-      "program": "${fileDirname}\\${fileBasenameNoExtension}.exe",
+      "program": "${workspaceRoot}\\bin\\${fileBasenameNoExtension}.exe",
       "args": [],
       "stopAtEntry": false,
       "cwd": "${fileDirname}",
@@ -42,25 +70,6 @@
         }
       ],
       "preLaunchTask": "빌드(GCC 컴파일. 실행파일: appdt.exe)"
-    },
-    {
-      "name": "C/C++ Runner: Debug Session",
-      "type": "cppdbg",
-      "request": "launch",
-      "args": [],
-      "stopAtEntry": false,
-      "externalConsole": true,
-      "cwd": "c:/Users/dunca/Workspace/Studying/Baekjoon/1000_A+B",
-      "program": "c:/Users/dunca/Workspace/Studying/Baekjoon/1000_A+B/build/Debug/outDebug",
-      "MIMode": "gdb",
-      "miDebuggerPath": "gdb",
-      "setupCommands": [
-        {
-          "description": "Enable pretty-printing for gdb",
-          "text": "-enable-pretty-printing",
-          "ignoreFailures": true
-        }
-      ]
     }
   ]
 }

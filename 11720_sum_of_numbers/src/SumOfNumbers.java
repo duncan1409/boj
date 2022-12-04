@@ -1,10 +1,13 @@
 import java.util.Scanner;
 
-public class APlusB {
+public class SumOfNumbers {
+	public static void Sum() {
+
+	}
+
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		int A = sc.nextInt(), B = sc.nextInt();
-
-		System.out.print(A + B);
+		String sNum = sc.nextInt();
+		
 	}
 }
