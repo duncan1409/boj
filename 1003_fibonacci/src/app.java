@@ -1,7 +1,6 @@
-package src;
 import java.util.Scanner;
 
-public class Fibonacci {
+public class app {
 	public static int FibonacciFunction(int N) {
 		if (N == 0)
 			return 1;

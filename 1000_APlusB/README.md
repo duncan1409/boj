@@ -8,7 +8,7 @@
 ## 출력
 첫째 줄에 A+B를 출력한다.
 
-## javascript
+## Javascript
 ``` javascript
 // node.js의 file system 모듈을 불러온다.
 const fs = require('fs'); 
