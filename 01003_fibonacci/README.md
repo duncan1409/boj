@@ -35,9 +35,12 @@ fibonacci(3)은 fibonacci(2)와 fibonacci(1)의 결과를 얻고, 2를 리턴한
 
 ## Pseudocode
 #### Classic Fibonacci
-```
+```cpp
 int fibonacci(int n)
 {
+    f(0)=0, f(1)=1
+    f[n]=f[n-1]+f[n-2]
+    ////
 	if (n==0)
 		return 0;
 	else if(n==1)
@@ -47,10 +50,40 @@ int fibonacci(int n)
 }
 ```
 #### Top-Down Method
-```
+```cpp
+int dp[100000001] ={0,};
 
+int fibonacci(int n){
+    if (n==0)
+        return 0;
+    else if(n==1)
+        return 1;
+    else{
+        if(dp[n]!=0)
+            return dp[n];
+        else
+            return dp[n]=fibonacci(n-1)+ fibonacci(n-2);
+    }
+}
 ```
 #### Bottom-Up Method
-```
+```cpp
+int dp[10000000000001]={0,};//0으로 초기화
 
+int fibonacci(int n)   {
+    dp[0]=0;
+    dp[1]=1;
+    for (int i=0; i<n; i++){
+        dp[i]=dp[i-1]+dp[i-2];
+    }
+    return fibonacci(n);
+}
 ```
+1. 큰문제를 작은문제로 쪼갤수 있어야한다.
+2. 메모이제이션: 모든 작은문제를 한번만 계산하고 가져다 쓴다. dp[] 배열을생성해서 값을 집어넣음
+3. 작은 문제들이 반복적으로 나오고 이거를 dp[]배열을 통해서 구합니다. 점화식으로푸는겁니다.
+
+dp 조건
+- 최적부분구조: 작은 부분 문제로부터 큰 문제를 해결//증명하기가 까다로워서 몰라도 됨
+중복되는 문제
+
