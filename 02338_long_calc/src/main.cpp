@@ -6,9 +6,11 @@
 #define endl "\n"
 using namespace std;
 
-void Solution(int a, int b)
+void Solution(int A, int B)
 {
-	cout << (a + b) * (a - b) << endl;
+	cout << A + B << endl;
+	cout << A - B << endl;
+	cout << A * B << endl;
 }
 int main()
 {

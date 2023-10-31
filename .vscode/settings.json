@@ -1,5 +1,7 @@
 {
 	"files.associations": {
+		"*.html": "html",
+		"*.java": "java",
 		"iostream": "cpp",
 		"xiosbase": "cpp",
 		"xstring": "cpp",
@@ -38,6 +40,7 @@
 		"xlocnum": "cpp",
 		"xmemory": "cpp",
 		"xmemory0": "cpp",
-		"xtr1common": "cpp"
+		"xtr1common": "cpp",
+		"deque": "cpp"
 	}
 }

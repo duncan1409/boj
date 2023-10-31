@@ -10,7 +10,7 @@
 #define endl "\n"
 using namespace std;
 
-void Solution()
+void Solution(int i)
 {
 	stack<string> stk;
 	string str;
@@ -21,7 +21,7 @@ void Solution()
 	while (getline(sstream, temp, ' '))
 		stk.push(temp);
 
-	cout << "Case #1: ";
+	cout << "Case #" << i << ": ";
 	while (!stk.empty())
 	{
 		cout << stk.top() << " ";
@@ -43,7 +43,7 @@ int main()
 	cin >> N;
 
 	cin.ignore();
-	for (int i = 0; i < N; i++)
-		Solution();
+	for (int i = 1; i <= N; i++)
+		Solution(i);
 	return 0;
 }
